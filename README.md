@@ -1,6 +1,9 @@
 # BA-Tools
 Algorithm collection for advanced business analytics tools
 
+## Requirements
+- gnuplot
+
 ## Currently supported: Features
 - datasets: mean, standard deviation, sample standard deviation
 - distributions: (standard) normal distribution
