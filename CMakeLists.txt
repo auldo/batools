@@ -10,6 +10,8 @@ link_directories(include src)
 add_library(batools src/version.cpp
         src/batools_exception.cpp
         src/numerical_dataset.cpp
-        src/example_mean_convergence.cpp)
+        src/example_mean_convergence.cpp
+        src/normal_distribution.cpp
+        src/example_normal_distribution.cpp)
 add_executable(playground playground.cpp)
 target_link_libraries(playground PUBLIC batools)
