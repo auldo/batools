@@ -1,3 +1,5 @@
+#pragma once
+
 #include <type_traits>
 #include <memory>
 #include <ranges>
@@ -35,7 +37,7 @@ public:
 
     //Printers
     void print() const;
-    void printMean() const;
+    float printMean() const;
 };
 
 //Constructors
@@ -130,8 +132,10 @@ void numerical_dataset<T>::print() const {
 }
 
 numerical_dataset_template
-void numerical_dataset<T>::printMean() const {
-    std::cout << "Mean is: " << mean() << std::endl;
+float numerical_dataset<T>::printMean() const {
+    auto _mean = mean();
+    std::cout << "Mean is: " << _mean << std::endl;
+    return _mean;
 }
 
 //Out of class
