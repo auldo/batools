@@ -37,7 +37,7 @@ public:
 
     //Printers
     void print() const;
-    float printMean() const;
+    void printMean() const;
 };
 
 //Constructors
@@ -132,10 +132,8 @@ void numerical_dataset<T>::print() const {
 }
 
 numerical_dataset_template
-float numerical_dataset<T>::printMean() const {
-    auto _mean = mean();
-    std::cout << "Mean is: " << _mean << std::endl;
-    return _mean;
+void numerical_dataset<T>::printMean() const {
+    std::cout << "Mean is: " << mean() << std::endl;
 }
 
 //Out of class
