@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD 23)
 include_directories(include src)
 link_directories(include src)
 add_library(batools src/version.cpp
-        src/batools_exception.cpp)
+        src/batools_exception.cpp
+        src/numerical_dataset.cpp)
 add_executable(playground playground.cpp)
 target_link_libraries(playground PUBLIC batools)
