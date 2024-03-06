@@ -31,9 +31,9 @@ public:
 
     //Other
     numerical_dataset draw_sample(size_t size);
-    float sample_standard_deviation(float& mean, bool corrected = true) const;
-    float standard_deviation(float& mean) const;
-    float mean() const;
+    double sample_standard_deviation(double& mean, bool corrected = true) const;
+    double standard_deviation(double& mean) const;
+    double mean() const;
 
     //Printers
     void print() const;
@@ -105,21 +105,21 @@ numerical_dataset<T> numerical_dataset<T>::draw_sample(size_t size) {
 }
 
 numerical_dataset_template
-float numerical_dataset<T>::mean() const {
-    float sum{0};
-    for(auto i{0}; i < _size; ++i) sum += static_cast<float>(operator[](i));
+double numerical_dataset<T>::mean() const {
+    double sum{0};
+    for(auto i{0}; i < _size; ++i) sum += static_cast<double>(operator[](i));
     return sum / _size;
 }
 
 numerical_dataset_template
-float numerical_dataset<T>::sample_standard_deviation(float& mean, bool corrected) const {
-    float sum{0};
-    for(auto i{0}; i < _size; ++i) sum += (std::powf((static_cast<float>(operator[](i)) - mean), 2));
+double numerical_dataset<T>::sample_standard_deviation(double& mean, bool corrected) const {
+    double sum{0};
+    for(auto i{0}; i < _size; ++i) sum += (std::pow((static_cast<double>(operator[](i)) - mean), 2));
     return corrected ? sum / (_size - 1) : sum / _size;
 }
 
 numerical_dataset_template
-float numerical_dataset<T>::standard_deviation(float &mean) const {
+double numerical_dataset<T>::standard_deviation(double &mean) const {
     return sample_standard_deviation(mean, false);
 }
 
