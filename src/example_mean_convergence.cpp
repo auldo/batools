@@ -5,8 +5,8 @@ namespace batools::examples {
         auto dataset{::batools::random_numerical_dataset(population_size, val_min, val_max)};
         dataset.printMean();
 
-        std::vector<std::pair<int, float>> sampleCountToMeanMapping;
-        batools::numerical_dataset<float> sampleMeans{};
+        std::vector<std::pair<int, double>> sampleCountToMeanMapping;
+        batools::numerical_dataset<double> sampleMeans{};
         for(auto i{0}; i < sample_count; ++i) {
             auto sample{dataset.draw_sample(sample_size)};
             auto sampleMean{sample.mean()};

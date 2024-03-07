@@ -7,5 +7,5 @@ int main() {
     //batools::examples::run_example_mean_convergence(1000, 1, 100, 2, 200, tmp_file);
     //batools::examples::run_example_draw_normal_distribution(0, 10, 0.1, 5, 0.000000000001, tmp_file);
     //batools::examples::run_example_draw_standard_normal_distribution(-10, 10, 0.01, tmp_file);
-    std::cout << batools::distributions::normal::cumulative_distribution_function(10, 12, 5) << std::endl;
+    //std::cout << batools::distributions::normal::cumulative_distribution_function(10, 12, 5) << std::endl;
 }

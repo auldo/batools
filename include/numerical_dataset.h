@@ -31,8 +31,10 @@ public:
 
     //Other
     numerical_dataset draw_sample(size_t size);
-    double sample_standard_deviation(double& mean, bool corrected = true) const;
-    double standard_deviation(double& mean) const;
+    double sample_standard_deviation(bool corrected = true) const;
+    double standard_deviation() const;
+    double standard_error(size_t sample_size) const;
+    double est_standard_error() const;
     double mean() const;
 
     //Printers
@@ -112,15 +114,32 @@ double numerical_dataset<T>::mean() const {
 }
 
 numerical_dataset_template
-double numerical_dataset<T>::sample_standard_deviation(double& mean, bool corrected) const {
+double numerical_dataset<T>::sample_standard_deviation(bool corrected) const {
     double sum{0};
-    for(auto i{0}; i < _size; ++i) sum += (std::pow((static_cast<double>(operator[](i)) - mean), 2));
+    auto _mean{mean()};
+    for(auto i{0}; i < _size; ++i) sum += (std::pow((static_cast<double>(operator[](i)) - _mean), 2));
     return corrected ? sum / (_size - 1) : sum / _size;
 }
 
+/**
+ * Assumes this dataset to be a population.
+ */
 numerical_dataset_template
-double numerical_dataset<T>::standard_deviation(double &mean) const {
-    return sample_standard_deviation(mean, false);
+double numerical_dataset<T>::standard_error(size_t sample_size) const {
+    return standard_deviation() / std::sqrt(sample_size);
+}
+
+/**
+ * Assumes this dataset to be a sample.
+ */
+numerical_dataset_template
+double numerical_dataset<T>::est_standard_error() const {
+    return sample_standard_deviation() / std::sqrt(_size);
+}
+
+numerical_dataset_template
+double numerical_dataset<T>::standard_deviation() const {
+    return sample_standard_deviation(false);
 }
 
 //Printers
