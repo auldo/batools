@@ -13,6 +13,8 @@ add_library(batools src/version.cpp
         src/example_mean_convergence.cpp
         src/normal_distribution.cpp
         src/example_normal_distribution.cpp
-        src/example_central_limit_theorem.cpp)
+        src/example_central_limit_theorem.cpp
+        src/binomial_distribution.cpp
+        src/example_binomial_distribution.cpp)
 add_executable(playground playground.cpp)
 target_link_libraries(playground PUBLIC batools)

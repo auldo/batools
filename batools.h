@@ -7,3 +7,5 @@
 #include "include/normal_distribution.h"
 #include "include/example_normal_distribution.h"
 #include "include/example_central_limit_theorem.h"
+#include "include/binomial_distribution.h"
+#include "include/example_binomial_distribution.h"
