@@ -5,9 +5,10 @@ Algorithm collection for advanced business analytics tools
 - gnuplot
 
 ## Currently supported: Features
-- datasets: mean, standard deviation, sample standard deviation
-- distributions: (standard) normal distribution
+- dataset: mean, standard deviation, sample standard deviation
+- (standard) normal distribution: pdf and cdf calculation
 
 ## Currently supported: Examples
 - mean convergence
+- central limit theorem
 - draw (standard) normal distribution
